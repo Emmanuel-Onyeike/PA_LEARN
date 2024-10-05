@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Verification Page</title>
+    <link rel="stylesheet" href="/css/verification number.css">
+    
+</head>
+<body>
+    <div class="container">
+        <h1>Verification Page</h1>
+        <p>Please verify your phone number.</p>
+
+        <div class="otp-inputs">
+            <input type="text" maxlength="1" class="otp-box" />
+            <input type="text" maxlength="1" class="otp-box" />
+            <input type="text" maxlength="1" class="otp-box" />
+            <input type="text" maxlength="1" class="otp-box" />
+            <input type="text" maxlength="1" class="otp-box" />
+            <input type="text" maxlength="1" class="otp-box" />
+        </div>
+
+        <button type="button" class="btn" id="confirm-btn">Confirm</button>
+        <a href="#" id="resend-link">Resend Code</a>
+    </div>
+
+    <!-- Sliding Notification -->
+    <div class="notification" id="notification" style="display: none;">
+        <p id="notification-message">Input OTP please to continue.</p>
+    </div>
+
+    <div class="modal" id="modal">
+        <div class="modal-content">
+            <div class="loader"></div>
+            <div class="success-message" id="success-message" style="display: none;">
+                <div class="icon">✓</div>
+                <p>Code resent successfully</p>
+            </div>
+        </div>
+    </div>
+    <script src="/script/verification number.js"></script>
+</body>
+</html>
