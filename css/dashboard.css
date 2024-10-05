@@ -1,0 +1,270 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: linear-gradient(to right, #f0f2f0, #13d2cb); 
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.header {
+    position: fixed; /* Fix the header at the top */
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: transparent; /* Transparent blue background */
+    padding: 15px 20px;
+   
+    z-index: 1000; /* Ensure it stays above other content */
+    backdrop-filter: blur(5px); /* Blur effect for better visibility */
+}
+
+.logo-img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+}
+
+.nav-links ul {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    margin-right: 40px;
+}
+
+.nav-links ul li {
+    margin: 0 15px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #fff;
+    font-weight: bold;
+    position: relative;
+    transition: color 0.3s;
+}
+
+.nav-links a:hover {
+    color: blue;
+}
+
+.nav-links a:hover::after {
+    content: '';
+    display: block;
+    width: 100%;
+    height: 2px;
+    background: red;
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+}
+
+.logout {
+    color: #ff0000; /* Explicitly set logout link color to bright red */
+    font-weight: bold;
+}
+
+.settings {
+    color: #fff;
+}
+
+.menu-icon {
+    display: none; /* Hide on PC view */
+    cursor: pointer;
+    color: #fff;
+    font-size: 24px;
+    margin-right: 20px;
+}
+
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 300px;
+    height: 100%;
+    background: white;
+    box-shadow: -2px 0 5px rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+    transition: transform 0.3s ease;
+    transform: translateX(100%);
+}
+
+.modal-content {
+    padding: 20px;
+}
+
+.close {
+    cursor: pointer;
+    float: right;
+    font-size: 24px;
+    color: black;
+}
+
+.modal ul {
+    list-style: none;
+    padding: 0;
+}
+
+.modal ul li {
+    margin: 15px 0;
+}
+
+.modal a {
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+}
+.modal a i {
+    margin-right: 8px; /* Space between icon and text */
+    color: #333; /* Default color for icons */
+    transition: color 0.3s; /* Smooth transition for hover effect */
+}
+
+/* Specific colors for each icon */
+.modal a:hover i {
+    color: #007bff; /* Blue on hover for all icons */
+}
+
+.modal a i.fas.fa-home {
+    color: #28a745; /* Green for Home icon */
+}
+
+.modal a i.fas.fa-info-circle {
+    color: #17a2b8; /* Cyan for About icon */
+}
+
+.modal a i.fas.fa-envelope {
+    color: #ffc107; /* Yellow for Contact icon */
+}
+
+.modal a i.fas.fa-user {
+    color: #6f42c1; /* Purple for Profile icon */
+}
+
+.modal a i.fas.fa-map {
+    color: #fd7e14; /* Orange for Tour icon */
+}
+
+.modal a i.fas.fa-chalkboard-teacher {
+    color: #20c997; /* Teal for Classes icon */
+}
+
+.modal a i.fas.fa-cog {
+    color: #343a40; /* Dark gray for Settings icon */
+}
+
+.modal a i.fas.fa-sign-out-alt {
+    color: #ff0000; /* Red for Logout icon */
+}
+.modal a i.fas.fa-check-circle {
+    color: #28a745; /* Green color for the Validation icon */
+}
+
+.modal a:hover i.fas.fa-check-circle {
+    color: #218838; /* Darker green on hover */
+}
+
+.modal a:has(i.fas.fa-check-circle) {
+    color: #28a745; /* Green color for the Validation link text */
+}
+
+.modal a:hover:has(i.fas.fa-check-circle) {
+    color: #218838; /* Darker green for link text on hover */
+}
+
+.modal a:hover {
+    color: #007bff;
+}
+
+/* Extra padding for body to avoid content being hidden behind the fixed header */
+body::before {
+    content: '';
+    display: block;
+    height: 80px; /* Adjust according to header height */
+}
+
+@media (max-width: 768px) {
+    .nav-links {
+        display: none; /* Hide on mobile view */
+    }
+    .menu-icon {
+        display: block; /* Show menu icon on mobile */
+    }
+
+    .header {
+        padding: 10px; /* Adjust padding for mobile */
+    }
+
+    .logo-img {
+        width: 40px; /* Smaller logo for mobile */
+        height: 40px;
+    }
+
+    .nav-links ul {
+        flex-direction: column; /* Stack links in the modal */
+    }
+}
+
+.section1 {
+    display: flex; /* Horizontal layout on PC */
+    justify-content: space-between; /* Space between elements */
+    align-items: center; /* Center items vertically */
+    margin-top: 30px;
+    padding: 60px; /* Increased padding for more space */
+    background-color: transparent; /* White background for better contrast */
+    border-radius: 12px; /* Slightly larger rounded corners */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); /* More pronounced shadow */
+    margin: 20px; /* Margin around the section */
+}
+
+.text-content {
+    max-width: 60%; /* Expanded text width */
+}
+
+.text-content h1 {
+    font-size: 3rem; /* Larger font size */
+    font-weight: bold; /* Bold text */
+    margin: 0; /* Remove default margin */
+    color: #333; /* Darker text color */
+}
+
+.text-content p {
+    font-size: 1.5rem; /* Increased font size for better readability */
+    font-weight: bold; /* Bold text */
+    margin-top: 10px; /* Space between h1 and p */
+    color: #666; /* Slightly lighter color for the paragraph */
+}
+
+.image-content {
+    max-width: 40%; /* Expanded image width */
+    margin-top: 30px;
+}
+
+.dashboard-image {
+    width: 100%; /* Make image responsive */
+    border-radius: 12px; /* Rounded corners for image */
+    object-fit: cover; /* Maintain aspect ratio while covering area */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15); /* Subtle shadow for image */
+}
+
+/* Mobile styles */
+@media (max-width: 768px) {
+    .section1 {
+        flex-direction: column; /* Stack elements vertically */
+        align-items: flex-start; /* Align items to the left */
+    }
+    .text-content {
+        max-width: 100%; /* Full width for text on mobile */
+        margin-bottom: 20px; /* Space below text */
+    }
+    .image-content {
+        max-width: 100%; /* Full width for image on mobile */
+    }
+}
